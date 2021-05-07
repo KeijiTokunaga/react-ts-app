@@ -5,13 +5,23 @@ import { Product } from '../model/product';
 
 type ProductProps = {
   products: Product[];
+  filterText: string;
+  inStockOnly: boolean;
 };
 
 export const ProductTable: React.FC<ProductProps> = (props) => {
   const rows: JSX.Element[] = [];
   let lastCategory: string = '';
+  const filterText = props.filterText;
+  const inStockOnly = props.inStockOnly;
 
   props.products.forEach((product) => {
+    if (product.name.indexOf(filterText) === -1) {
+      return;
+    }
+    if (inStockOnly && !product.stocked) {
+      return;
+    }
     if (product.category !== lastCategory) {
       rows.push(
         <ProductCategoryRow
