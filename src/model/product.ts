@@ -1,4 +1,11 @@
-export const PRODUCTS = [
+type Product = {
+  category: string;
+  price: string;
+  stocked: boolean;
+  name: string;
+};
+
+export const PRODUCTS: Product[] = [
   {
     category: 'Sporting Goods',
     price: '$49.99',

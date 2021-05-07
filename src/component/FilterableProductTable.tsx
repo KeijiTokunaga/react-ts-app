@@ -2,18 +2,22 @@ import React from 'react';
 import { SearchBar } from './SearchBar';
 import { ProductTable } from './ProductTable';
 
-type Props = {
+type Product = {
   category: string;
   price: string;
   stocked: boolean;
   name: string;
 };
 
-export const FilterableProductTable = (props: Props) => {
+type ProductsProps = {
+  products: Product[];
+};
+
+export const FilterableProductTable: React.FC<ProductsProps> = (props) => {
   return (
     <>
       <SearchBar />
-      <ProductTable products={props.product} />
+      <ProductTable products={props.products} />
     </>
   );
 };
