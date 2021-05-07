@@ -5,7 +5,7 @@ export const ProductCategoryRow: React.FC<{ category: string }> = ({
 }) => {
   return (
     <tr>
-      <th>{category}</th>
+      <th colSpan={2}>{category}</th>
     </tr>
   );
 };
