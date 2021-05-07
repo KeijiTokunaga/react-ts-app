@@ -1,4 +1,3 @@
-// import {useState} from 'react';
 import './App.css';
 import { FilterableProductTable } from './component/FilterableProductTable';
 import { PRODUCTS } from './model/product';

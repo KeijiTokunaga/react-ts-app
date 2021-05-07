@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProductCategoryRow } from './ProductCategoryRow';
+import { ProductRow } from './ProductRow';
 
 type Product = {
   category: string;
@@ -21,10 +22,12 @@ export const ProductTable: React.FC<ProductProps> = (props) => {
           <th>Price</th>
         </tr>
       </thead>
-
       <tbody>
         {props.products.map((v) => (
-          <ProductCategoryRow category={v.category} key={v.category} />
+          <>
+            <ProductCategoryRow category={v.category} key={v.category} />
+            <ProductRow product={v} key={v.name} />
+          </>
         ))}
       </tbody>
     </table>
