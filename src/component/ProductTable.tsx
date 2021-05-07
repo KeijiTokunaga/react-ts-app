@@ -1,13 +1,7 @@
 import React from 'react';
 import { ProductCategoryRow } from './ProductCategoryRow';
 import { ProductRow } from './ProductRow';
-
-type Product = {
-  category: string;
-  price: string;
-  stocked: boolean;
-  name: string;
-};
+import { Product } from '../model/product';
 
 type ProductProps = {
   products: Product[];

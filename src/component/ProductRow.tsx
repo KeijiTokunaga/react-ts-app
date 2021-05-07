@@ -1,11 +1,5 @@
 import React from 'react';
-
-type Product = {
-  category: string;
-  price: string;
-  stocked: boolean;
-  name: string;
-};
+import { Product } from '../model/product';
 
 type ProductProps = {
   product: Product;
