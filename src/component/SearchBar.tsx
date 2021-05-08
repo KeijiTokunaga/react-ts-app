@@ -3,22 +3,22 @@ import React from 'react';
 type Props = {
   filterText: string;
   inStockOnly: boolean;
-  changeFilterText: (v: string) => void;
-  changeInStockOnly: (v: boolean) => void;
+  setFilterText: React.Dispatch<React.SetStateAction<string>>;
+  setInStockOnly: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const SearchBar: React.FC<Props> = ({
   filterText,
   inStockOnly,
-  changeFilterText,
-  changeInStockOnly,
+  setFilterText,
+  setInStockOnly,
 }) => {
   const handleFilterText = (e: React.ChangeEvent<HTMLInputElement>) => {
-    changeFilterText(e.target.value);
+    setFilterText(e.target.value);
   };
 
   const handleInStockOnly = () => {
-    changeInStockOnly(!inStockOnly);
+    setInStockOnly(!inStockOnly);
   };
 
   return (

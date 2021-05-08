@@ -11,20 +11,13 @@ export const FilterableProductTable: React.FC<Props> = ({ products }) => {
   const [filterText, setFilterText] = useState('');
   const [inStockOnly, setInStockOnly] = useState(false);
 
-  const changeFilterText = (v: string) => {
-    setFilterText(v);
-  };
-  const changeInStockOnly = (v: boolean) => {
-    setInStockOnly(v);
-  };
-
   return (
     <>
       <SearchBar
         filterText={filterText}
         inStockOnly={inStockOnly}
-        changeFilterText={changeFilterText}
-        changeInStockOnly={changeInStockOnly}
+        setFilterText={setFilterText}
+        setInStockOnly={setInStockOnly}
       />
       <ProductTable
         products={products}
