@@ -18,7 +18,7 @@ export const SearchBar: React.FC<SearchBarProps> = (props) => {
   };
 
   const handleInStockOnly = () => {
-    changeInStockOnly(isStockOnly ? false : true);
+    changeInStockOnly(!isStockOnly);
   };
 
   return (
@@ -32,8 +32,8 @@ export const SearchBar: React.FC<SearchBarProps> = (props) => {
       <p>
         <input
           type="checkbox"
-          checked={isStockOnly}
-          onClick={handleInStockOnly}
+          defaultChecked={isStockOnly}
+          onChange={handleInStockOnly}
         />{' '}
         Only show products in stock
       </p>
