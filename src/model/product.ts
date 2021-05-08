@@ -5,6 +5,35 @@ export type Product = {
   name: string;
 };
 
+export type Columns = {
+  title: string;
+  dataIndex: string;
+  key: string;
+};
+
+export const COLUMNS: Columns[] = [
+  {
+    title: 'カテゴリ',
+    dataIndex: 'category',
+    key: 'category',
+  },
+  {
+    title: 'プライス',
+    dataIndex: 'price',
+    key: 'price',
+  },
+  {
+    title: '在庫',
+    dataIndex: 'stoked',
+    key: 'stoked',
+  },
+  {
+    title: '商品名',
+    dataIndex: 'name',
+    key: 'name',
+  },
+];
+
 export const PRODUCTS: Product[] = [
   {
     category: 'Sporting Goods',
