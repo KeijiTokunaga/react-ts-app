@@ -1,12 +1,11 @@
 import React from 'react';
 import { Product } from '../model/product';
 
-type ProductProps = {
+type Props = {
   product: Product;
 };
 
-export const ProductRow: React.FC<ProductProps> = (props) => {
-  const product = props.product;
+export const ProductRow: React.FC<Props> = ({ product }) => {
   const name = product.stocked ? (
     product.name
   ) : (

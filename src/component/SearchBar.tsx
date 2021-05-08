@@ -1,24 +1,24 @@
 import React from 'react';
 
-type SearchBarProps = {
+type Props = {
   filterText: string;
   inStockOnly: boolean;
   changeFilterText: (v: string) => void;
   changeInStockOnly: (v: boolean) => void;
 };
 
-export const SearchBar: React.FC<SearchBarProps> = (props) => {
-  const fileterText = props.filterText;
-  const isStockOnly = props.inStockOnly;
-  const changeFilterText = props.changeFilterText;
-  const changeInStockOnly = props.changeInStockOnly;
-
+export const SearchBar: React.FC<Props> = ({
+  filterText,
+  inStockOnly,
+  changeFilterText,
+  changeInStockOnly,
+}) => {
   const handleFilterText = (e: React.ChangeEvent<HTMLInputElement>) => {
     changeFilterText(e.target.value);
   };
 
   const handleInStockOnly = () => {
-    changeInStockOnly(!isStockOnly);
+    changeInStockOnly(!inStockOnly);
   };
 
   return (
@@ -26,13 +26,13 @@ export const SearchBar: React.FC<SearchBarProps> = (props) => {
       <input
         type="text"
         placeholder="Search..."
-        value={fileterText}
+        value={filterText}
         onChange={handleFilterText}
       />
       <p>
         <input
           type="checkbox"
-          defaultChecked={isStockOnly}
+          defaultChecked={inStockOnly}
           onChange={handleInStockOnly}
         />{' '}
         Only show products in stock

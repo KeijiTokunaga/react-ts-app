@@ -3,19 +3,21 @@ import { ProductCategoryRow } from './ProductCategoryRow';
 import { ProductRow } from './ProductRow';
 import { Product } from '../model/product';
 
-type ProductProps = {
+type Props = {
   products: Product[];
   filterText: string;
   inStockOnly: boolean;
 };
 
-export const ProductTable: React.FC<ProductProps> = (props) => {
+export const ProductTable: React.FC<Props> = ({
+  products,
+  filterText,
+  inStockOnly,
+}) => {
   const rows: JSX.Element[] = [];
   let lastCategory: string = '';
-  const filterText = props.filterText;
-  const inStockOnly = props.inStockOnly;
 
-  props.products.forEach((product) => {
+  products.forEach((product) => {
     if (product.name.indexOf(filterText) === -1) {
       return;
     }

@@ -3,11 +3,11 @@ import { SearchBar } from './SearchBar';
 import { ProductTable } from './ProductTable';
 import { Product } from '../model/product';
 
-type ProductsProps = {
+type Props = {
   products: Product[];
 };
 
-export const FilterableProductTable: React.FC<ProductsProps> = (props) => {
+export const FilterableProductTable: React.FC<Props> = ({ products }) => {
   const [filterText, setFilterText] = useState('');
   const [inStockOnly, setInStockOnly] = useState(false);
 
@@ -27,7 +27,7 @@ export const FilterableProductTable: React.FC<ProductsProps> = (props) => {
         changeInStockOnly={changeInStockOnly}
       />
       <ProductTable
-        products={props.products}
+        products={products}
         filterText={filterText}
         inStockOnly={inStockOnly}
       />
