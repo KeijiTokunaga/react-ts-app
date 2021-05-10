@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+I implemented the contents of ”https://ja.reactjs.org/docs/thinking-in-react.html” with function components.
+
 ## Available Scripts
 
 In the project directory, you can run:
